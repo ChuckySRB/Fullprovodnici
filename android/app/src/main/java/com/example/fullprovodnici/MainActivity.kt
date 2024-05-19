@@ -71,7 +71,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startRecording() {
-        mediaRecorder = MediaRecorder().apply {
+        val context = activity.applicationContext
+        mediaRecorder = MediaRecorder(activity).apply {
             setAudioSource(MediaRecorder.AudioSource.MIC)
             setVideoSource(MediaRecorder.VideoSource.SURFACE)
             setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
@@ -81,7 +82,11 @@ class MainActivity : AppCompatActivity() {
             setVideoSize(getScreenWidth(), getScreenHeight())
             setVideoFrameRate(30)
             setVideoEncodingBitRate(5 * 1000 * 1000)
-            prepare()
+            try {
+                prepare()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
         }
 
         val surface: Surface = mediaRecorder.surface
