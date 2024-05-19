@@ -1,10 +1,9 @@
 from flask import Blueprint, request, jsonify
-import hashlib
-import os
-import base64
+
 from proofApp.models import db
 from proofApp.models.records import Record
 from proofApp.utils.android_config import verify_play_integrity_token
+from proofApp.utils.video_code import video_encoder, generate_video_id
 
 proofBlueprint = Blueprint("proof", __name__)
 
@@ -38,10 +37,10 @@ def CreateRecord():
     video_content = video.read()
 
     # Make a unique code by hashing the video content
-    video_code = hashlib.sha256(video_content).hexdigest()
+    video_code = video_encoder(video_content)
 
     # Create a unique video identifier (UUID)
-    video_id = base64.urlsafe_b64encode(os.urandom(16)).decode('utf-8').rstrip('=')
+    video_id = generate_video_id()
 
     # Create a new Record instance (Assuming you have a Record model and a database session)
     # Here you should replace the following with actual database code
@@ -71,7 +70,7 @@ def CheckRecord():
     video_content = video.read()
 
     # Create video code by hashing the video content
-    video_code = hashlib.sha256(video_content).hexdigest()
+    video_code = video_encoder(video_content)
 
     # Retrieve the record from the database using the video_id
     record = Record.query.filter_by(video_id=video_id).first()
