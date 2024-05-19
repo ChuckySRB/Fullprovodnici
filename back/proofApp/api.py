@@ -79,7 +79,7 @@ def CheckRecord():
         return jsonify({"error": "Record not found"}), 404
 
     # Check if the video code from the database is the same as the created code for the video with the same ID
-    if record['video_code'] == video_code:
+    if record.video_code == video_code:
         return jsonify({"match": True})
     else:
         return jsonify({"match": False})
