@@ -126,6 +126,8 @@ class MainActivity : AppCompatActivity() {
         val rectangle01: LinearLayout = findViewById(R.id.rectangle01)
         val rectangle02: LinearLayout = findViewById(R.id.rectangle31)
 
+        val textViewEx: TextView = findViewById(R.id.textView3)
+
         imageView12.setOnClickListener {
             if(rectangle00.visibility == View.VISIBLE){
                 rectangle00.visibility = View.GONE
@@ -180,7 +182,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         sendButton.setOnClickListener {
+            textViewEx.visibility = View.VISIBLE
             sendVideo()
+
+
         }
     }
 
