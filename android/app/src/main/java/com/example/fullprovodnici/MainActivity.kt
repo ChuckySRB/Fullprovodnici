@@ -121,9 +121,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         val imageView12: ImageView = findViewById(R.id.imageView12)
+        val imageViewLeft: ImageView = findViewById(R.id.imageView10)
         val rectangle00: LinearLayout = findViewById(R.id.rectangle00)
         val rectangle01: LinearLayout = findViewById(R.id.rectangle01)
         val rectangle02: LinearLayout = findViewById(R.id.rectangle31)
+
+        val textViewEx: TextView = findViewById(R.id.textView3)
 
         imageView12.setOnClickListener {
             if(rectangle00.visibility == View.VISIBLE){
@@ -143,6 +146,24 @@ class MainActivity : AppCompatActivity() {
 
             }
 
+        imageViewLeft.setOnClickListener {
+            if(rectangle00.visibility == View.VISIBLE){
+                rectangle00.visibility = View.GONE
+                rectangle02.visibility = View.VISIBLE
+            }else{
+                if(rectangle01.visibility == View.VISIBLE){
+                    rectangle01.visibility = View.GONE
+                    rectangle00.visibility = View.VISIBLE
+                }else{
+                    if(rectangle02.visibility == View.VISIBLE){
+                        rectangle02.visibility = View.GONE
+                        rectangle01.visibility = View.VISIBLE
+                    }
+                }
+            }
+
+        }
+
 
         val externalFilesDir = applicationContext.getExternalFilesDir(null)
         Log.d("ExternalFilesDir", "External files directory: $externalFilesDir")
@@ -161,7 +182,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         sendButton.setOnClickListener {
+            textViewEx.visibility = View.VISIBLE
             sendVideo()
+
+
         }
     }
 
