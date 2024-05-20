@@ -307,7 +307,7 @@
                         android:contentDescription="@string/button1_description"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="$FFFFFF"
+                        android:background="#FFFFFF"
                         android:src="@drawable/black_btn"
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
@@ -349,7 +349,7 @@
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/button1_description"
                         android:layout_marginTop="10dp"
-                        android:background="$FFFFFF"
+                        android:background="#FFFFFF"
                         android:src="@drawable/black_btn"
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
@@ -390,7 +390,7 @@
                         android:contentDescription="@string/button1_description"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="$FFFFFF"
+                        android:background="#FFFFFF"
                         android:src="@drawable/black_btn"
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>

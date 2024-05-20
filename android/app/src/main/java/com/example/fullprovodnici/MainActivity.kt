@@ -97,12 +97,12 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.S)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    
+
         setContentView(R.layout.record_screen)
 
         mediaProjectionManager = getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
 
-        val startButton: Button = findViewById(R.id.start_recording_button)
+        val startButton: ImageButton = findViewById(R.id.start_recording_button)
         val stopButton: Button = findViewById(R.id.stop_recording_button)
         val sendButton: Button = findViewById(R.id.send_video_button)
 
@@ -122,20 +122,22 @@ class MainActivity : AppCompatActivity() {
         val externalFilesDir = applicationContext.getExternalFilesDir(null)
         Log.d("ExternalFilesDir", "External files directory: $externalFilesDir")
 
-//        sendButton.setOnClickListener {
-//            sendVideo(statusTextView)
-//        }
-//        startButton.setOnClickListener {
-//            if (!isRecording) {
-//                startScreenCapture()
-//            }
-//        }
-//
-//        stopButton.setOnClickListener {
-//            if (isRecording) {
-//                stopScreenCapture()
-//            }
-//        }
+
+        startButton.setOnClickListener {
+            if (!isRecording) {
+                startScreenCapture()
+            }
+        }
+
+        stopButton.setOnClickListener {
+            if (isRecording) {
+                stopScreenCapture()
+            }
+        }
+
+        sendButton.setOnClickListener {
+            sendVideo()
+        }
     }
 
 
@@ -249,7 +251,7 @@ class MainActivity : AppCompatActivity() {
         }
         return outputFile
         }
-    private fun sendVideo(textView: TextView) {
+    private fun sendVideo() {
         //textView.visibility = VISIBLE
 
         val url = "http://192.168.0.28:5000/record"
