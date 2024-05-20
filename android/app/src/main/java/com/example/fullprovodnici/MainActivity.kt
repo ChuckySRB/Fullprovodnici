@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
 //        val sendButton: Button = findViewById(R.id.send_video_button)
 //        val statusTextView: TextView = findViewById(R.id.statusTextView)
 
-        val btn1: Button = findViewById(R.id.)
+        //val btn1: Button = findViewById(R.id.)
 
         val externalFilesDir = applicationContext.getExternalFilesDir(null)
         Log.d("ExternalFilesDir", "External files directory: $externalFilesDir")
