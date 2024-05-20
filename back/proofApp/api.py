@@ -69,7 +69,6 @@ def CheckRecord():
 
     # Read video content
     video_content = video.read()
-
     # Create video code by hashing the video content
     video_code = video_encoder(video_content)
 
