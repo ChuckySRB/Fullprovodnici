@@ -177,6 +177,6 @@
         app:layout_constraintHorizontal_bias="0.929"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/Group28" />
+        app:srcCompat="@drawable/group28" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
