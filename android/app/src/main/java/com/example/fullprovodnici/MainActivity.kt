@@ -41,6 +41,8 @@ import okhttp3.MultipartBody
 import okhttp3.Request;
 import okhttp3.RequestBody.Companion.asRequestBody
 import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.LinearLayout
 import okhttp3.Response;
 import java.io.File
 import java.io.FileOutputStream
@@ -117,6 +119,29 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ChatActivity::class.java)
             startActivity(intent)
         }
+
+        val imageView12: ImageView = findViewById(R.id.imageView12)
+        val rectangle00: LinearLayout = findViewById(R.id.rectangle00)
+        val rectangle01: LinearLayout = findViewById(R.id.rectangle01)
+        val rectangle02: LinearLayout = findViewById(R.id.rectangle31)
+
+        imageView12.setOnClickListener {
+            if(rectangle00.visibility == View.VISIBLE){
+                rectangle00.visibility = View.GONE
+                rectangle01.visibility = View.VISIBLE
+            }else{
+                if(rectangle01.visibility == View.VISIBLE){
+                    rectangle01.visibility = View.GONE
+                    rectangle02.visibility = View.VISIBLE
+                }else{
+                    if(rectangle02.visibility == View.VISIBLE){
+                        rectangle02.visibility = View.GONE
+                        rectangle00.visibility = View.VISIBLE
+                    }
+                }
+            }
+
+            }
 
 
         val externalFilesDir = applicationContext.getExternalFilesDir(null)

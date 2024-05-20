@@ -57,7 +57,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imageView5"
                 app:layout_constraintWidth_percent="0.8"
-                android:visibility="gone">
+                >
 
 
                 <TextView
@@ -208,6 +208,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imageView5"
                 app:layout_constraintWidth_percent="0.8"
+                android:visibility="gone"
                 >
 
 
