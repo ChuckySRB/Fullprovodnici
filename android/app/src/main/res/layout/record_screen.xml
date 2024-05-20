@@ -142,7 +142,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
                     android:layout_marginTop="15dp"
-                    app:srcCompat="@drawable/Timer" />
+                    app:srcCompat="@drawable/timer" />
 
             </LinearLayout>
             <LinearLayout
@@ -192,7 +192,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="78dp"
                     android:layout_marginTop="15dp"
-                    app:srcCompat="@drawable/Shield" />
+                    app:srcCompat="@drawable/shield" />
 
             </LinearLayout>
 
@@ -242,7 +242,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="92dp"
                     android:layout_marginTop="15dp"
-                    app:srcCompat="@drawable/Stop_button" />
+                    app:srcCompat="@drawable/stop_button" />
 
             </LinearLayout>
 
