@@ -1,4 +1,3 @@
-```markdown
 # Android Video Upload and Flask Video Verifier
 
 This repository contains a Flask application that handles video uploads and verifies the integrity of the videos. The app uses Blueprints for modular organization and provides endpoints to upload and check videos.
@@ -42,7 +41,7 @@ Returns a simple message to confirm the service is running.
 **Request**:
 ```sh
 curl -X GET http://127.0.0.1:5000/proof/
-```
+
 
 **Response**:
 ```plaintext
