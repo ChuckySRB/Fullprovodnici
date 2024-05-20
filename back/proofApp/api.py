@@ -15,6 +15,7 @@ def HelloProof():
 
 @proofBlueprint.route("/record", methods=["POST"])
 def CreateRecord():
+
     # Get the video file and android tag from the request
     android_tag = request.form.get('android_tag')
     video = request.files.get('video')

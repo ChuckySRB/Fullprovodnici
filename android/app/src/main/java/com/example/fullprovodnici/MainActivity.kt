@@ -1,6 +1,7 @@
 package com.example.fullprovodnici
 
 import android.app.Activity
+import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.graphics.Insets
@@ -11,23 +12,38 @@ import android.media.projection.MediaProjection
 import android.media.projection.MediaProjectionManager
 import android.os.Build
 import android.os.Bundle
+import android.os.IBinder
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.Surface
 import android.view.View
+import android.view.View.VISIBLE
 import android.view.WindowInsets
 import android.view.WindowMetrics
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.window.layout.WindowMetricsCalculator
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import okhttp3.OkHttpClient
+import okhttp3.RequestBody
 import java.io.IOException
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
 
-import android.app.Notification
-import android.app.Service
-import android.os.IBinder
-import android.os.RemoteException
-import android.util.Log
+import okhttp3.Request;
+import okhttp3.RequestBody.Companion.asRequestBody
+
+import okhttp3.Response;
+import java.io.File
+import java.io.FileOutputStream
+
 
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 class MediaProjectionForegroundService : Service() {
@@ -64,6 +80,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private const val REQUEST_CODE_SCREEN_CAPTURE = 1000
     }
+    private val REQUEST_CODE_PICK_VIDEO = 123
 
     private lateinit var mediaProjectionManager: MediaProjectionManager
     private var mediaProjection: MediaProjection? = null
@@ -80,7 +97,15 @@ class MainActivity : AppCompatActivity() {
 
         val startButton: Button = findViewById(R.id.start_recording_button)
         val stopButton: Button = findViewById(R.id.stop_recording_button)
+        val sendButton: Button = findViewById(R.id.send_video_button)
+        val statusTextView: TextView = findViewById(R.id.statusTextView)
 
+        val externalFilesDir = applicationContext.getExternalFilesDir(null)
+        Log.d("ExternalFilesDir", "External files directory: $externalFilesDir")
+
+        sendButton.setOnClickListener {
+            sendVideo(statusTextView)
+        }
         startButton.setOnClickListener {
             if (!isRecording) {
                 startScreenCapture()
@@ -183,4 +208,83 @@ class MainActivity : AppCompatActivity() {
             return displayMetrics.heightPixels
         }
     }
+
+    private fun copyRawVideoToCache(rawResId: Int, fileName: String): File? {
+        val inputStream = resources.openRawResource(rawResId)
+        val outputFile = File(cacheDir, fileName)
+        val outputStream = FileOutputStream(outputFile)
+
+        try {
+            val buffer = ByteArray(1024)
+            var length: Int
+            while (inputStream.read(buffer).also { length = it } > 0) {
+                outputStream.write(buffer, 0, length)
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+            return null
+        } finally {
+            inputStream.close()
+            outputStream.close()
+        }
+        return outputFile
+        }
+    private fun sendVideo(textView: TextView) {
+        //textView.visibility = VISIBLE
+
+        val url = "http://192.168.0.28:5000/record"
+        val okhttpclient = OkHttpClient()
+//        val formBody: RequestBody = FormBody.Builder()
+//            .add("android_tag", "1")
+//            .add("video", "video1")
+//            .build()
+        //val videoFilePath = "../video/screen_recording_20240519_210942_whatsapp.mp4"
+        val videoFileName = "screen_recording_20240519_210942_whatsapp"
+        val videoFile = copyRawVideoToCache(R.raw.screen_recording_20240519_210942_whatsapp, "screen_recording_20240519_210942_whatsapp.mp4")
+
+        val requestBody = videoFile?.let {
+            MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("android_tag", "1")
+                .addFormDataPart(
+                    "video",
+                    videoFileName,
+                    it.asRequestBody("video/*".toMediaTypeOrNull())
+                )
+                .build()
+        }
+
+        val request: Request = Request.Builder()
+            .url(url)
+            .post(requestBody!!)
+            .build()
+
+        okhttpclient.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                // Handle failure
+                Log.e("SendVideo", "Failed to send video", e)
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                // Handle response
+                if (response.isSuccessful) {
+                    Log.d("SendVideo", "Video sent successfully")
+                    // You can handle the success response here
+                } else {
+                    Log.e("SendVideo", "Failed to send video")
+                    // Handle other response codes here
+                }
+            }
+        })
+    }
+
+
 }
+
+
+
+//var okhttpclient = OkHttpClient()
+//var request: Request = Request.Builder().url("127.0.0.1:5000").build()
+
+
+

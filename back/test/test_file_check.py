@@ -9,10 +9,10 @@ application.config.from_object(Configuration)
 
 db.init_app(application)
 
-TEST_FAKE_VIDEO_PATH = "proofApp/database/test_records/Screen_Recording_20240519_210942_WhatsApp_FAKE.mp4"
-TEST_REAL_VIDEO_PATH = "proofApp/database/test_records/Screen_Recording_20240519_210942_WhatsApp.mp4"
+TEST_FAKE_VIDEO_PATH = "../proofApp/database/test_records/Screen_Recording_20240519_210942_WhatsApp_FAKE.mp4"
+TEST_REAL_VIDEO_PATH = "../proofApp/database/test_records/Screen_Recording_20240519_210942_WhatsApp.mp4"
 
-VIDEO_ID = "to1SxIs_lLoqDMlj-XpKzw"
+VIDEO_ID = "4GKeUJr66SeQU7x-Eu5WsA"
 
 with application.app_context() as context:  # Read video content
     with open(TEST_FAKE_VIDEO_PATH, 'rb') as f:
