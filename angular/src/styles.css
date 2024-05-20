@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --primary: #02033C;
+    --secondary: #8283FF;
+    --accent: #0087b6;
+    --grey: #D9D9D9;
+    --light: #ffffff;
+    --hover-primary: #02033c7a;
+    --hover-secondary: #9898e1;
+  }
+
+  body {
+    font-family: 'Source Sans 3';
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: var(--primary);
+    background-color: var(--grey);
+    margin: 0px;
+}
+
+::-webkit-scrollbar {
+    width: 9px; /* Set the width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary); /* Color of the thumb */
+    border-radius: 6px; /* Rounded corners of the thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--hover-primary);
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: var(--grey); /* Color of the track */
+  }

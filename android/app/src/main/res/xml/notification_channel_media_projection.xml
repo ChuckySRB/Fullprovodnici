@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<notification-channel
+    android:id="@+id/media_projection"
+    android:name="Media Projection"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:importance="default" />
