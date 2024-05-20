@@ -107,7 +107,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/imageView5"
                 app:layout_constraintWidth_percent="0.8"
-                android:visibility="gone">
+                android:visibility="gone"
+                >
 
 
                 <TextView
@@ -124,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:gravity="left"
-                    android:text="Choose the App to Record"
+                    android:text="Start recording"
                     android:textColor="#02033C"
                     android:textStyle="bold" />
 
@@ -133,15 +134,115 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:gravity="left"
-                    android:text="Select the app where you need to capture evidence (eg. messaging app, social media)."
+                    android:text="TrueScreen app will automatically start recording after a 3-second countdown."
                     android:textColor="#02033C" />
 
                 <ImageView
                     android:id="@+id/imageView18"
                     android:layout_width="match_parent"
+                    android:layout_height="92dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/Timer" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/rectangle02"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/rounded_corners"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView5"
+                app:layout_constraintWidth_percent="0.8"
+                android:visibility="gone"
+                >
+
+
+                <TextView
+                    android:id="@+id/tw21"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/ovo" />
+                    android:gravity="center"
+                    android:text="HOW TO USE TRUE SCREEN"
+                    android:textColor="#02033C"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="left"
+                    android:text="Save and autenticate"
+                    android:textColor="#02033C"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="left"
+                    android:text="The recording will be saved securely in your library, with unique authentication code ensuring its validity and preventing any tampering"
+                    android:textColor="#02033C" />
+
+                <ImageView
+                    android:id="@+id/imageView28"
+                    android:layout_width="match_parent"
+                    android:layout_height="78dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/Shield" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rectangle31"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/rounded_corners"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView5"
+                app:layout_constraintWidth_percent="0.8"
+                >
+
+
+                <TextView
+                    android:id="@+id/tw31"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="HOW TO USE TRUE SCREEN"
+                    android:textColor="#02033C"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="left"
+                    android:text="End recording"
+                    android:textColor="#02033C"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="left"
+                    android:text="When you have recorded all necessary information, click on the 'End' button to stop recording."
+                    android:textColor="#02033C" />
+
+                <ImageView
+                    android:id="@+id/imageView38"
+                    android:layout_width="match_parent"
+                    android:layout_height="92dp"
+                    android:layout_marginTop="15dp"
+                    app:srcCompat="@drawable/Stop_button" />
 
             </LinearLayout>
 
@@ -194,15 +295,20 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:layout_weight="1"
+                        android:layout_marginTop="10dp"
                         android:gravity="center"
                         android:text="WHATSAPP"
                         android:textColor="#02033C"
                         android:textStyle="bold" />
 
-                    <Button
+                    <ImageButton
                         android:layout_width="wrap_content"
+                        android:contentDescription="@string/button1_description"
                         android:layout_height="wrap_content"
-                        android:text="Click Me" />
+                        android:layout_marginTop="10dp"
+                        android:background="$FFFFFF"
+                        android:src="@drawable/black_btn"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
                 <!-- Second Rectangle -->
@@ -230,16 +336,21 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
+                        android:layout_marginTop="10dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="MESSENGER"
                         android:textColor="#02033C"
                         android:textStyle="bold" />
 
-                    <Button
+                    <ImageButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Click Me" />
+                        android:contentDescription="@string/button1_description"
+                        android:layout_marginTop="10dp"
+                        android:background="$FFFFFF"
+                        android:src="@drawable/black_btn"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
                 <!-- Third Rectangle -->
@@ -269,13 +380,18 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="SNAPCHAT"
+                        android:layout_marginTop="10dp"
                         android:textColor="#02033C"
                         android:textStyle="bold" />
 
-                    <Button
+                    <ImageButton
                         android:layout_width="wrap_content"
+                        android:contentDescription="@string/button1_description"
                         android:layout_height="wrap_content"
-                        android:text="Click Me" />
+                        android:layout_marginTop="10dp"
+                        android:background="$FFFFFF"
+                        android:src="@drawable/black_btn"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -303,7 +419,8 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/arrow_right" />
+                app:srcCompat="@drawable/arrow_right"
+                tools:ignore="TouchTargetSizeCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

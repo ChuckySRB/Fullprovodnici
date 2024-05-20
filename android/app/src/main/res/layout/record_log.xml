@@ -57,10 +57,10 @@
         <LinearLayout
             android:id="@+id/rectangle1"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:background="@drawable/rounded_corners"
             android:orientation="horizontal"
-            android:padding="16dp"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,12 +76,12 @@
                 android:text="07-22-24-8DXL"
                 android:textColor="#02033C"
                 android:textStyle="bold"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="12dp"/>
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/record_eye"
 
@@ -90,10 +90,10 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:padding="16dp"
-                android:src="@drawable/record_bin"
                 android:background="#FFFFFF"
                 android:contentDescription="@string/btn_desc3"
+                android:padding="13dp"
+                android:src="@drawable/record_bin"
 
                 />
         </LinearLayout>
@@ -102,11 +102,11 @@
         <LinearLayout
             android:id="@+id/rectangle2"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/rounded_corners"
             android:orientation="horizontal"
-            android:padding="16dp"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -122,7 +122,7 @@
                 android:text="07-22-24-8DXL"
                 android:textColor="#02033C"
                 android:textStyle="bold"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="12dp"/>
 
             <ImageView
                 android:layout_width="24dp"
@@ -136,10 +136,10 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:padding="16dp"
-                android:src="@drawable/record_bin"
                 android:background="#FFFFFF"
-                android:contentDescription="@string/btn_desc2"
+                android:contentDescription="@string/btn_desc3"
+                android:padding="13dp"
+                android:src="@drawable/record_bin"
 
                 />
         </LinearLayout>
@@ -148,10 +148,10 @@
         <LinearLayout
             android:id="@+id/rectangle3"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/rounded_corners"
-            android:padding="16dp"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -167,12 +167,12 @@
                 android:text="07-22-24-8DXL"
                 android:textColor="#02033C"
                 android:textStyle="bold"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="12dp"/>
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/record_eye"
 
@@ -181,10 +181,10 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:padding="16dp"
-                android:src="@drawable/record_bin"
                 android:background="#FFFFFF"
-                android:contentDescription="@string/btn_desc1"
+                android:contentDescription="@string/btn_desc3"
+                android:padding="13dp"
+                android:src="@drawable/record_bin"
 
                 />
         </LinearLayout>
