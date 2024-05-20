@@ -37,6 +37,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RecordLogActivity" />
+        <activity android:name=".ChatActivity" />
+
 
     </application>
 
