@@ -40,7 +40,7 @@ import okhttp3.MultipartBody
 
 import okhttp3.Request;
 import okhttp3.RequestBody.Companion.asRequestBody
-
+import android.widget.ImageButton
 import okhttp3.Response;
 import java.io.File
 import java.io.FileOutputStream
@@ -97,16 +97,27 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.S)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
+    
         setContentView(R.layout.record_screen)
+
         mediaProjectionManager = getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
 
-//        val startButton: Button = findViewById(R.id.start_recording_button)
-//        val stopButton: Button = findViewById(R.id.stop_recording_button)
-//        val sendButton: Button = findViewById(R.id.send_video_button)
-//        val statusTextView: TextView = findViewById(R.id.statusTextView)
+        val startButton: Button = findViewById(R.id.start_recording_button)
+        val stopButton: Button = findViewById(R.id.stop_recording_button)
+        val sendButton: Button = findViewById(R.id.send_video_button)
 
-        //val btn1: Button = findViewById(R.id.)
+
+        val button1: ImageButton = findViewById(R.id.button1)
+        button1.setOnClickListener {
+            val intent = Intent(this, RecordLogActivity::class.java)
+            startActivity(intent)
+        }
+        val button3: ImageButton = findViewById(R.id.button3)
+        button3.setOnClickListener {
+            val intent = Intent(this, ChatActivity::class.java)
+            startActivity(intent)
+        }
+
 
         val externalFilesDir = applicationContext.getExternalFilesDir(null)
         Log.d("ExternalFilesDir", "External files directory: $externalFilesDir")
