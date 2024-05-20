@@ -45,6 +45,11 @@ import java.io.File
 import java.io.FileOutputStream
 
 
+
+
+
+
+
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 class MediaProjectionForegroundService : Service() {
 

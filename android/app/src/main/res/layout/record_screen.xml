@@ -302,6 +302,7 @@
                         android:textStyle="bold" />
 
                     <ImageButton
+                        android:id="@+id/start_recording_button"
                         android:layout_width="wrap_content"
                         android:contentDescription="@string/button1_description"
                         android:layout_height="wrap_content"
@@ -393,6 +394,32 @@
                         android:src="@drawable/black_btn"
                         tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
+
+                <Button
+                    android:id="@+id/send_video_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="284dp"
+                    android:background="#8283FF"
+
+                    android:text="SEND VIDEO"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.17"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/stop_recording_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="284dp"
+                    android:background="#8283FF"
+                    android:text="STOP RECORDING"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
