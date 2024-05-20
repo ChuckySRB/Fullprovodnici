@@ -1,0 +1,123 @@
+.main{
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    display: flex;
+    align-items: flex-start;
+    padding: 50px;
+}
+
+.card{
+    align-self: center;
+    padding: 50px;
+    border-radius: 15px;
+    min-width: 70%;
+    background-color: var(--light);
+    margin: 50px 100px 70px 100px;
+    min-height: 300px;
+}
+
+.upload-row{
+    padding: 30px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.upload-button{
+    padding: 20px;
+    background-color: var(--secondary);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100px;
+}
+
+.upload-file, .enter-code{
+    text-align: center;
+    font-weight: bold;
+    padding: 6px;
+}
+
+.video-id-block, .upload-file-block{
+    padding: 30px;
+}
+
+
+.video-id-input{
+    background-color: var(--grey);
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--primary);
+    text-align: center;
+}
+
+.file-input{
+    display: none;
+
+}
+
+.button-row{
+    padding: 2px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.verify-button{
+    background-color: var(--primary);
+    color: var(--light);
+    width: 320px;
+    padding: 30px;
+    font-size: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.verify-button:hover{
+    transition: 2ms;
+    background-color: var(--hover-primary);
+}
+
+.file-name{
+    color: var(--hover-primary);
+    text-align: center;
+    font-weight: bold;
+    padding: 6px;
+}
+
+.loading-row{
+    min-height: 50px;
+    padding: 30px;
+}
+
+.message{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.loading, .success, .fail{
+    display: none;
+}
+
+.footer{
+    font-size: 20px;
+    padding: 40px 30px 10px 30px;
+    border-top: solid 5px var(--primary);
+}
+
+.footer-text {
+    justify-content: space-around;
+    order: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    margin-right: 100px;
+ }
+
+.footer-text span {
+    font-weight: bold;
+}

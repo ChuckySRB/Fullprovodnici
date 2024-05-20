@@ -1,0 +1,37 @@
+<div class="main">
+  <div class = "header">
+    <div class = "logo"> <img src="../assets/LogoText.svg"> </div>
+  </div>
+  <div class = "card">
+    <div class = "upload-row">
+      <div class = "upload-file-block">
+        <div class = "upload-button" (click)="uploadFile()"><img src = "../assets/file_upload.svg"></div>
+        <div class = "upload-file">UPLOAD FILE</div>
+        <div class = "file-name">{{file_name}}</div>
+        <input type="file" id="file-input" class = "file-input"/>
+      </div>
+      <div class = "video-id-block">
+        <input class = "video-id-input" type="text" [(ngModel)] = "video_name" name="video">
+        <div class = "enter-code">ENTER CODE</div>
+      </div>
+    </div>
+    <div class = "button-row">
+      <div class = "verify-button">VERIFY</div>
+    </div>
+    <div class = "loading-row">
+      <img class = "loading" src = "../assets/loading.svg" />
+      <img class = "success" src = "../assets/success.svg"/>
+      <div class = "message"> {{message}} </div>
+      <img class = "fail" src = "../assets/fail.svg" />
+    </div>
+  </div>
+  <div class = "footer">
+    <div class="footer-text">
+      <span>&copy; COPYRIGHT: </span>
+      <div>Nevena Tomić</div>
+      <div>Nemanja Udović</div>
+      <div>Luka Lazović</div>
+      <div>Časlav Petronić</div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    --primary: #02033C;
+    --secondary: #8283FF;
+    --accent: #0087b6;
+    --grey: #D9D9D9;
+    --light: #ffffff;
+    --hover-primary: #02033c7a;
+  }
+
+  body {
+    font-family: 'Source Sans 3';
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: var(--primary);
+    background-color: var(--grey);
+    margin: 0px;
+}
