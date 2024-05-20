@@ -5,24 +5,24 @@
   <div class = "card">
     <div class = "upload-row">
       <div class = "upload-file-block">
-        <div class = "upload-button" (click)="uploadFile()"><img src = "../assets/file_upload.svg"></div>
+        <div class = "upload-button"  (click)="uploadFile()"><img src = "../assets/file_upload.svg"></div>
         <div class = "upload-file">UPLOAD FILE</div>
         <div class = "file-name">{{file_name}}</div>
-        <input type="file" id="file-input" class = "file-input"/>
+        <input type="file" id="file-input"  (change)="onFileSelected($event)" class = "file-input"/>
       </div>
       <div class = "video-id-block">
-        <input class = "video-id-input" type="text" [(ngModel)] = "video_name" name="video">
-        <div class = "enter-code">ENTER CODE</div>
+        <input class = "video-id-input" type="text" [(ngModel)] = "video_id" name="video">
+        <div class = "enter-code">ENTER VIDEO ID</div>
       </div>
     </div>
     <div class = "button-row">
-      <div class = "verify-button">VERIFY</div>
+      <div class = "verify-button" (click)="verify()">VERIFY</div>
     </div>
     <div class = "loading-row">
-      <img class = "loading" src = "../assets/loading.svg" />
-      <img class = "success" src = "../assets/success.svg"/>
-      <div class = "message"> {{message}} </div>
-      <img class = "fail" src = "../assets/fail.svg" />
+      <img *ngIf="loading" class = "loading" src = "../assets/loading.svg" />
+      <img *ngIf="success" class = "success" src = "../assets/success.svg"/>
+      <img *ngIf="fail" class = "fail" src = "../assets/denied.svg" />
+      <div class = "message" > {{message}} </div>
     </div>
   </div>
   <div class = "footer">

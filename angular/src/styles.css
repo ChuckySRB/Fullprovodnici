@@ -7,6 +7,7 @@
     --grey: #D9D9D9;
     --light: #ffffff;
     --hover-primary: #02033c7a;
+    --hover-secondary: #9898e1;
   }
 
   body {
@@ -17,3 +18,20 @@
     background-color: var(--grey);
     margin: 0px;
 }
+
+::-webkit-scrollbar {
+    width: 9px; /* Set the width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary); /* Color of the thumb */
+    border-radius: 6px; /* Rounded corners of the thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--hover-primary);
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: var(--grey); /* Color of the track */
+  }
